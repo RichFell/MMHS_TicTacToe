@@ -23,12 +23,14 @@ class ViewController: UIViewController {
 
     var labelArray = [CustomLabel]()
     var turnDecider = true
+    var turnCount = 0
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         labelArray = [labelOne, labelTwo, labelThree, labelFour, labelFive, labelSix, labelSeven, labelEight, labelNine]
+        switchIndicatorLabel()
     }
 
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -57,6 +59,10 @@ class ViewController: UIViewController {
                     label.textColor = UIColor.redColor()
                     turnDecider = true
                 }
+                switchIndicatorLabel()
+                
+                turnCount++
+                noWinner()
 
                 decideWinner()
             }
@@ -73,6 +79,20 @@ class ViewController: UIViewController {
             }
         }
         return nil
+    }
+
+    func switchIndicatorLabel()
+    {
+        if turnDecider == true
+        {
+            indicatorLabel.text = "X"
+            indicatorLabel.textColor = UIColor.blueColor()
+        }
+        else
+        {
+            indicatorLabel.textColor = UIColor.redColor()
+            indicatorLabel.text = "O"
+        }
     }
 
     func decideWinner()
@@ -122,6 +142,7 @@ class ViewController: UIViewController {
                 label.text = ""
                 label.canTap = true
                 self.turnDecider = true
+                self.turnCount = 0
             }
             }))
         alert.addAction(restartAction)
@@ -130,15 +151,24 @@ class ViewController: UIViewController {
 
     }
 
+    func noWinner()
+    {
+        if turnCount == 9
+        {
+            winningAlertShow("No one")
+        }
+    }
+
     func implementAI(someLabel: CustomLabel) -> CustomLabel!
     {
         for label in labelArray
         {
             if label.canTap == true
             {
-                return label 
+                return label
             }
         }
+        //started writing smart AI, but lots of code need to brainstorm a better fast enumeration method.
 //        if someLabel == labelOne
 //        {
 //            if labelFive.canTap == true
@@ -174,146 +204,6 @@ class ViewController: UIViewController {
 //                return labelSix
 //            }
 //
-//        }
-//        if someLabel == labelTwo
-//        {
-//            if labelFive.canTap == true
-//            {
-//                return labelFive
-//            }
-//            else if labelThree.canTap == true
-//            {
-//                return labelThree
-//            }
-//            else if labelOne.canTap == true
-//            {
-//                return labelOne
-//            }
-//            else if labelSeven.canTap == true
-//            {
-//                return labelSeven
-//            }
-//            else if labelFour.canTap == true
-//            {
-//                return labelFour
-//            }
-//            else if labelNine.canTap == true
-//            {
-//                return labelNine
-//            }
-//            else if labelEight.canTap == true
-//            {
-//                return labelEight
-//            }
-//            else
-//            {
-//                return labelSix
-//            }
-//        }
-//        if someLabel == labelThree
-//        {
-//            if labelFive.canTap == true
-//            {
-//                return labelFive
-//            }
-//            else if labelTwo.canTap == true
-//            {
-//                return labelTwo
-//            }
-//            else if labelOne.canTap == true
-//            {
-//                return labelOne
-//            }
-//            else if labelSeven.canTap == true
-//            {
-//                return labelSeven
-//            }
-//            else if labelFour.canTap == true
-//            {
-//                return labelFour
-//            }
-//            else if labelNine.canTap == true
-//            {
-//                return labelNine
-//            }
-//            else if labelEight.canTap == true
-//            {
-//                return labelEight
-//            }
-//            else
-//            {
-//                return labelSix
-//            }
-//        }
-//        if someLabel == labelFour
-//        {
-//            if labelFive.canTap == true
-//            {
-//                return labelFive
-//            }
-//            else if labelOne.canTap == true
-//            {
-//                return labelOne
-//            }
-//            else if labelSeven.canTap == true
-//            {
-//                return labelSeven
-//            }
-//            else if labelTwo.canTap == true
-//            {
-//                return labelTwo
-//            }
-//            else if labelThree.canTap == true
-//            {
-//                return labelThree
-//            }
-//            else if labelNine.canTap == true
-//            {
-//                return labelNine
-//            }
-//            else if labelEight.canTap == true
-//            {
-//                return labelEight
-//            }
-//            else
-//            {
-//                return labelSix
-//            }
-//        }
-//        if someLabel == labelFive
-//        {
-//            if labelFive.canTap == true
-//            {
-//                return labelFive
-//            }
-//            else if labelOne.canTap == true
-//            {
-//                return labelOne
-//            }
-//            else if labelSeven.canTap == true
-//            {
-//                return labelSeven
-//            }
-//            else if labelTwo.canTap == true
-//            {
-//                return labelTwo
-//            }
-//            else if labelThree.canTap == true
-//            {
-//                return labelThree
-//            }
-//            else if labelNine.canTap == true
-//            {
-//                return labelNine
-//            }
-//            else if labelEight.canTap == true
-//            {
-//                return labelEight
-//            }
-//            else
-//            {
-//                return labelSix
-//            }
 //        }
         return nil
     }
