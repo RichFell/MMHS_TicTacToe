@@ -22,10 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet var labelNine: CustomLabel
 
     @IBOutlet var labelBackgroundView: UIView
+    @IBOutlet var bigBackgroundView: UIView
     var labelArray = [CustomLabel]()
     var turnDecider = true
     var turnCount = 0
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         switchIndicatorLabel()
     }
 
+    //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         var point = CGPoint()
@@ -41,35 +42,32 @@ class ViewController: UIViewController {
 
         var label = findLabel(point)
 
-        if label != nil
+        decideLabelText(label)
+    }
+    //Function utilizing the UIPanGestureRecognizer. Shows where the point is in the code and moves the label accordingly, also changes the labels in the grid if the indicatorLabel is moved within their frame
+    @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
+    {
+        var point = CGPoint()
+        point = panGestureRecognizer.locationInView(bigBackgroundView)
+        indicatorLabel.transform = CGAffineTransformMakeTranslation(point.x, point.y)
+        point.x += indicatorLabel.center.x
+        point.y += indicatorLabel.center.y
 
+        if panGestureRecognizer.state == UIGestureRecognizerState.Ended
         {
-                if label.canTap == true
+            var label = findLabel(point)
+
+            if label != nil
             {
-                label.canTap = false
-
-                if turnDecider == true
+                if CGRectContainsPoint(label.frame, point)
                 {
-                    label.text = "X"
-                    label.textColor = UIColor.blueColor()
-                    turnDecider = false
+                    decideLabelText(label)
                 }
-                else
-                {
-                    label.text = "O"
-                    label.textColor = UIColor.redColor()
-                    turnDecider = true
-                }
-                switchIndicatorLabel()
-                
-                turnCount++
-                noWinner()
-
-                decideWinner()
             }
         }
     }
 
+    //Function to find the Label in the grid that is either being tapped or the PanGesture recognizer is over
     func findLabel(point: CGPoint) -> CustomLabel!
     {
         for label in labelArray
@@ -81,7 +79,7 @@ class ViewController: UIViewController {
         }
         return nil
     }
-
+    //This function is used to decide what the text of the indicatorLabel will be
     func switchIndicatorLabel()
     {
         if turnDecider == true
@@ -96,6 +94,7 @@ class ViewController: UIViewController {
         }
     }
 
+    //Function that evaluates to see if there is a winner, and if their is to show our end of game alert
     func decideWinner()
     {
         if labelOne.text == labelTwo.text && labelTwo.text == labelThree.text && labelOne.canTap == false
@@ -132,6 +131,36 @@ class ViewController: UIViewController {
         }
     }
 
+    //Function to figure out what the text of our CustomLabel will be once we have found the one we are tapping or that moved our indicatorLabel over
+    func decideLabelText(label: CustomLabel)
+    {
+
+        if label.canTap == true
+        {
+            label.canTap = false
+
+            if turnDecider == true
+            {
+                label.text = "X"
+                label.textColor = UIColor.blueColor()
+                turnDecider = false
+            }
+            else
+            {
+                label.text = "O"
+                label.textColor = UIColor.redColor()
+                turnDecider = true
+            }
+            switchIndicatorLabel()
+
+            turnCount++
+            noWinner()
+
+            decideWinner()
+        }
+    }
+
+    //Function to show our AlertController and then use the AlertAction to reset the game
     func winningAlertShow(labelString: String)
     {
         let alert = UIAlertController(title: "\(labelString) is the Winner", message: nil, preferredStyle: .Alert)
@@ -153,6 +182,7 @@ class ViewController: UIViewController {
 
     }
 
+    //Function to decide if their is no winner to show our alert and reset the game.
     func noWinner()
     {
         if turnCount == 9
