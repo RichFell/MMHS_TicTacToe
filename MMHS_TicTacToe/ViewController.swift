@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet var labelBackgroundView: UIView
     @IBOutlet var bigBackgroundView: UIView
     var labelArray = [CustomLabel]()
-    var turnDecider = true
+    var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
 
     override func viewDidLoad() {
@@ -144,6 +144,8 @@ class ViewController: UIViewController {
                 label.text = "X"
                 label.textColor = UIColor.blueColor()
                 turnDecider = false
+
+                basicAI()
             }
             else
             {
@@ -151,6 +153,8 @@ class ViewController: UIViewController {
                 label.textColor = UIColor.redColor()
                 turnDecider = true
             }
+
+
             switchIndicatorLabel()
 
             turnCount++
@@ -191,6 +195,25 @@ class ViewController: UIViewController {
             switchIndicatorLabel()
         }
     }
+
+    func basicAI()
+    {
+        for anyLabel in labelArray
+        {
+            println("once through the loop")
+            if anyLabel.canTap == true
+            {
+                println(anyLabel)
+                anyLabel.text = "O"
+                anyLabel.textColor = UIColor.redColor()
+                anyLabel.canTap = false
+                turnDecider = true
+                turnCount++
+                break
+            }
+        }
+    }
+
 
    }
 
