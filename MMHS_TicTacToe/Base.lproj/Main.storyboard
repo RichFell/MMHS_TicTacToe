@@ -93,12 +93,20 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KOI-xt-tWK" appends="YES" id="Ffy-yi-HoG"/>
+                                </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4S-xE-uKf">
                                 <rect key="frame" x="200" y="20" width="80" height="80"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="A02-rn-CuB" appends="YES" id="vK3-m3-Iog"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -107,12 +115,10 @@
                             <constraint firstAttribute="centerX" secondItem="Yol-en-1vB" secondAttribute="centerX" id="q4m-S7-7vc"/>
                             <constraint firstAttribute="centerX" secondItem="b4S-xE-uKf" secondAttribute="centerX" id="zLB-o8-wb3"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Y6M-8f-2mP" appends="YES" id="xC6-3A-dXE"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="indicatorLabel" destination="b4S-xE-uKf" id="cpz-sA-T8V"/>
+                        <outlet property="labelBackgroundView" destination="Yol-en-1vB" id="7OX-IJ-2fe"/>
                         <outlet property="labelEight" destination="doD-6z-val" id="Z9x-nM-svb"/>
                         <outlet property="labelFive" destination="6U5-AZ-7Ef" id="npn-HJ-VYh"/>
                         <outlet property="labelFour" destination="bQC-6I-wa8" id="8Fw-AP-ZrL"/>
@@ -125,11 +131,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Y6M-8f-2mP">
+                <tapGestureRecognizer id="KOI-xt-tWK">
                     <connections>
-                        <action selector="onLabelTapped:" destination="BYZ-38-t0r" id="hXd-ip-GfM"/>
+                        <action selector="onLabelTapped:" destination="BYZ-38-t0r" id="3RY-uY-b6k"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="A02-rn-CuB"/>
             </objects>
             <point key="canvasLocation" x="-69" y="58.309859154929576"/>
         </scene>

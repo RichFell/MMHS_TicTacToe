@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet var labelEight: CustomLabel
     @IBOutlet var labelNine: CustomLabel
 
+    @IBOutlet var labelBackgroundView: UIView
     var labelArray = [CustomLabel]()
     var turnDecider = true
     var turnCount = 0
@@ -36,7 +37,7 @@ class ViewController: UIViewController {
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         var point = CGPoint()
-        point = tapGestureRecognizer.locationInView(view)
+        point = tapGestureRecognizer.locationInView(labelBackgroundView)
 
         var label = findLabel(point)
 
@@ -143,6 +144,7 @@ class ViewController: UIViewController {
                 label.canTap = true
                 self.turnDecider = true
                 self.turnCount = 0
+                self.switchIndicatorLabel()
             }
             }))
         alert.addAction(restartAction)
@@ -156,58 +158,11 @@ class ViewController: UIViewController {
         if turnCount == 9
         {
             winningAlertShow("No one")
+            switchIndicatorLabel()
         }
     }
 
-    func implementAI(someLabel: CustomLabel) -> CustomLabel!
-    {
-        for label in labelArray
-        {
-            if label.canTap == true
-            {
-                return label
-            }
-        }
-        //started writing smart AI, but lots of code need to brainstorm a better fast enumeration method.
-//        if someLabel == labelOne
-//        {
-//            if labelFive.canTap == true
-//            {
-//                return labelFive
-//            }
-//            else if labelThree.canTap == true
-//            {
-//                return labelThree
-//            }
-//            else if labelSeven.canTap == true
-//            {
-//                return labelSeven
-//            }
-//            else if labelTwo.canTap == true
-//            {
-//                return labelTwo
-//            }
-//            else if labelFour.canTap == true
-//            {
-//                return labelFour
-//            }
-//            else if labelNine.canTap == true
-//            {
-//                return labelNine
-//            }
-//            else if labelEight.canTap == true
-//            {
-//                return labelEight
-//            }
-//            else
-//            {
-//                return labelSix
-//            }
-//
-//        }
-        return nil
-    }
-}
+   }
 
 
 
