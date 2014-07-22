@@ -22,16 +22,18 @@ class ViewController: UIViewController {
     @IBOutlet var labelNine: CustomLabel!
 
     @IBOutlet var labelBackgroundView: UIView!
-    @IBOutlet var bigBackgroundView: UIView!
     var labelArray = [CustomLabel]()
     var turnDecider = true
     var turnCount = 0
+    var indicatorLabelCenter = CGPoint()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         labelArray = [labelOne, labelTwo, labelThree, labelFour, labelFive, labelSix, labelSeven, labelEight, labelNine]
         switchIndicatorLabel()
+
+        indicatorLabelCenter = indicatorLabel.center
     }
 
     //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap
@@ -47,19 +49,16 @@ class ViewController: UIViewController {
     //Function utilizing the UIPanGestureRecognizer. Shows where the point is in the code and moves the label accordingly, also changes the labels in the grid if the indicatorLabel is moved within their frame
     @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
     {
-        var point = CGPoint()
-        point = panGestureRecognizer.locationInView(bigBackgroundView)
-        indicatorLabel.transform = CGAffineTransformMakeTranslation(point.x, point.y)
-        point.x += indicatorLabel.center.x
-        point.y += indicatorLabel.center.y
+        indicatorLabel.center = CGPointMake(panGestureRecognizer.locationInView(view).x, panGestureRecognizer.locationInView(view).y)
 
         if panGestureRecognizer.state == UIGestureRecognizerState.Ended
         {
-            var label = findLabel(point)
+            var label = findLabel(panGestureRecognizer.locationInView(view))
+            indicatorLabel.center = indicatorLabelCenter
 
             if label != nil
             {
-                if CGRectContainsPoint(label.frame, point)
+                if CGRectContainsPoint(label.frame, panGestureRecognizer.locationInView(view))
                 {
                     decideLabelText(label)
                 }
