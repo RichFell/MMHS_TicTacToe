@@ -44,28 +44,6 @@ class ViewController: UIViewController {
 
         decideLabelText(label)
     }
-    //Function utilizing the UIPanGestureRecognizer. Shows where the point is in the code and moves the label accordingly, also changes the labels in the grid if the indicatorLabel is moved within their frame
-    @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
-    {
-        var point = CGPoint()
-        point = panGestureRecognizer.locationInView(bigBackgroundView)
-        indicatorLabel.transform = CGAffineTransformMakeTranslation(point.x, point.y)
-        point.x += indicatorLabel.center.x
-        point.y += indicatorLabel.center.y
-
-        if panGestureRecognizer.state == UIGestureRecognizerState.Ended
-        {
-            var label = findLabel(point)
-
-            if label != nil
-            {
-                if CGRectContainsPoint(label.frame, point)
-                {
-                    decideLabelText(label)
-                }
-            }
-        }
-    }
 
     //Function to find the Label in the grid that is either being tapped or the PanGesture recognizer is over
     func findLabel(point: CGPoint) -> CustomLabel!
