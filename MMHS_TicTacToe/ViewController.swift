@@ -20,12 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet var labelSeven: CustomLabel!
     @IBOutlet var labelEight: CustomLabel!
     @IBOutlet var labelNine: CustomLabel!
-
     @IBOutlet var labelBackgroundView: UIView!
-    @IBOutlet var bigBackgroundView: UIView!
+
     var labelArray = [CustomLabel]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
     {
         var point = CGPoint()
-        point = panGestureRecognizer.locationInView(bigBackgroundView)
+        point = panGestureRecognizer.locationInView(labelBackgroundView)
         indicatorLabel.transform = CGAffineTransformMakeTranslation(point.x, point.y)
         point.x += indicatorLabel.center.x
         point.y += indicatorLabel.center.y
