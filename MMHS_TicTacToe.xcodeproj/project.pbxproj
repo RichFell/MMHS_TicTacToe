@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BCC8100197ECBEF006FA0F0 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCC80FF197ECBEF006FA0F0 /* CustomImageView.swift */; };
 		9BF8A4811976FACC00C60CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8A4801976FACC00C60CF1 /* AppDelegate.swift */; };
 		9BF8A4841976FACC00C60CF1 /* MMHS_TicTacToe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8A4821976FACC00C60CF1 /* MMHS_TicTacToe.xcdatamodeld */; };
 		9BF8A4861976FACC00C60CF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8A4851976FACC00C60CF1 /* ViewController.swift */; };
 		9BF8A4891976FACC00C60CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF8A4871976FACC00C60CF1 /* Main.storyboard */; };
 		9BF8A48B1976FACC00C60CF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF8A48A1976FACC00C60CF1 /* Images.xcassets */; };
 		9BF8A4971976FACC00C60CF1 /* MMHS_TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8A4961976FACC00C60CF1 /* MMHS_TicTacToeTests.swift */; };
-		9BF8A4A1197711BC00C60CF1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8A4A0197711BC00C60CF1 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BCC80FF197ECBEF006FA0F0 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomImageView.swift; path = ../CustomImageView.swift; sourceTree = "<group>"; };
 		9BF8A47B1976FACC00C60CF1 /* MMHS_TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMHS_TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF8A47F1976FACC00C60CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF8A4801976FACC00C60CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		9BF8A4901976FACC00C60CF1 /* MMHS_TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMHS_TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF8A4951976FACC00C60CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF8A4961976FACC00C60CF1 /* MMHS_TicTacToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMHS_TicTacToeTests.swift; sourceTree = "<group>"; };
-		9BF8A4A0197711BC00C60CF1 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLabel.swift; path = ../CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			children = (
 				9BF8A4801976FACC00C60CF1 /* AppDelegate.swift */,
 				9BF8A4851976FACC00C60CF1 /* ViewController.swift */,
-				9BF8A4A0197711BC00C60CF1 /* CustomLabel.swift */,
+				9BCC80FF197ECBEF006FA0F0 /* CustomImageView.swift */,
 				9BF8A4871976FACC00C60CF1 /* Main.storyboard */,
 				9BF8A48A1976FACC00C60CF1 /* Images.xcassets */,
 				9BF8A4821976FACC00C60CF1 /* MMHS_TicTacToe.xcdatamodeld */,
@@ -217,7 +217,7 @@
 				9BF8A4861976FACC00C60CF1 /* ViewController.swift in Sources */,
 				9BF8A4811976FACC00C60CF1 /* AppDelegate.swift in Sources */,
 				9BF8A4841976FACC00C60CF1 /* MMHS_TicTacToe.xcdatamodeld in Sources */,
-				9BF8A4A1197711BC00C60CF1 /* CustomLabel.swift in Sources */,
+				9BCC8100197ECBEF006FA0F0 /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +405,7 @@
 				9BF8A49C1976FACC00C60CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BF8A49D1976FACC00C60CF1 /* Build configuration list for PBXNativeTarget "MMHS_TicTacToeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				9BF8A49F1976FACC00C60CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

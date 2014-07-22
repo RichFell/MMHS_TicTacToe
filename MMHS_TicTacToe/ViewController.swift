@@ -10,149 +10,152 @@ import UIKit
 
 class ViewController: UIViewController {
                             
-    @IBOutlet var indicatorLabel: UILabel!
-    @IBOutlet var labelOne: CustomLabel!
-    @IBOutlet var labelTwo: CustomLabel!
-    @IBOutlet var labelThree: CustomLabel!
-    @IBOutlet var labelFour: CustomLabel!
-    @IBOutlet var labelFive: CustomLabel!
-    @IBOutlet var labelSix: CustomLabel!
-    @IBOutlet var labelSeven: CustomLabel!
-    @IBOutlet var labelEight: CustomLabel!
-    @IBOutlet var labelNine: CustomLabel!
+   
     @IBOutlet var labelBackgroundView: UIView!
+    @IBOutlet weak var imageViewOne: CustomImageView!
+    @IBOutlet weak var imageViewTwo: CustomImageView!
+    @IBOutlet weak var imageViewThree: CustomImageView!
+    @IBOutlet weak var imageViewFour: CustomImageView!
+    @IBOutlet weak var imageViewFive: CustomImageView!
+    @IBOutlet weak var imageViewSix: CustomImageView!
+    @IBOutlet weak var imageViewSeven: CustomImageView!
+    @IBOutlet weak var imageViewEight: CustomImageView!
+    @IBOutlet weak var imageViewNine: CustomImageView!
+    @IBOutlet weak var indicatorImageView: CustomImageView!
 
-    var labelArray = [CustomLabel]()
+    var imageViewArray = [CustomImageView]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
-    var indicatorLabelCenter = CGPoint()
+    var indicatorImageViewCenter = CGPoint()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        labelArray = [labelOne, labelTwo, labelThree, labelFour, labelFive, labelSix, labelSeven, labelEight, labelNine]
-        switchIndicatorLabel()
-        indicatorLabelCenter = indicatorLabel.center
+        imageViewArray = [imageViewOne, imageViewTwo, imageViewThree, imageViewFour, imageViewFive, imageViewSix, imageViewSeven, imageViewEight, imageViewNine]
+        switchIndicatorImage()
+
+        indicatorImageViewCenter = indicatorImageView.center
+
     }
 
     //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        var label = findLabel(tapGestureRecognizer.locationInView(labelBackgroundView))
+        var imageView = findImageView(tapGestureRecognizer.locationInView(labelBackgroundView))
 
-        decideLabelText(label)
+        decideImage(imageView)
     }
     //Function utilizing the UIPanGestureRecognizer. Shows where the point is in the code and moves the label accordingly, also changes the labels in the grid if the indicatorLabel is moved within their frame
     @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
     {
         var point = panGestureRecognizer.locationInView(view)
-        indicatorLabel.center = CGPointMake(point.x, point.y)
+        indicatorImageView.center = CGPointMake(point.x, point.y)
 
         if panGestureRecognizer.state == UIGestureRecognizerState.Ended
         {
-            var label = findLabel(panGestureRecognizer.locationInView(labelBackgroundView))
-            indicatorLabel.center = indicatorLabelCenter
+            var imageView = findImageView(panGestureRecognizer.locationInView(labelBackgroundView))
+            indicatorImageView.center = indicatorImageViewCenter
 
-            if label != nil
+            if imageView != nil
             {
-                if CGRectContainsPoint(label.frame, panGestureRecognizer.locationInView(labelBackgroundView))
+                if CGRectContainsPoint(imageView.frame, panGestureRecognizer.locationInView(labelBackgroundView))
                 {
-                    decideLabelText(label)
+                    decideImage(imageView)
                 }
             }
         }
     }
 
     //Function to find the Label in the grid that is either being tapped or the PanGesture recognizer is over
-    func findLabel(point: CGPoint) -> CustomLabel!
+    func findImageView(point: CGPoint) -> CustomImageView!
     {
-        for label in labelArray
+        for imageView in imageViewArray
         {
-            if CGRectContainsPoint(label.frame, point)
+            if CGRectContainsPoint(imageView.frame, point)
             {
-                return label
+                return imageView
             }
         }
         return nil
     }
     //This function is used to decide what the text of the indicatorLabel will be
-    func switchIndicatorLabel()
+    func switchIndicatorImage()
     {
         if turnDecider == true
         {
-            indicatorLabel.text = "X"
-            indicatorLabel.textColor = UIColor.blueColor()
+            indicatorImageView.image = UIImage(named: "image_1")
+            indicatorImageView.selection = 1
         }
         else
         {
-            indicatorLabel.textColor = UIColor.redColor()
-            indicatorLabel.text = "O"
+            indicatorImageView.image = UIImage(named: "image_2")
+            indicatorImageView.selection = 2
         }
     }
 
     //Function that evaluates to see if there is a winner, and if their is to show our end of game alert
     func decideWinner()
     {
-        if labelOne.text == labelTwo.text && labelTwo.text == labelThree.text && labelOne.canTap == false
+        if imageViewOne.selection == imageViewTwo.selection && imageViewTwo.selection == imageViewThree.selection && imageViewThree.canTap == false && imageViewThree.selection != 0
         {
-            winningAlertShow(labelOne.text)
+            winningAlertShow(imageViewThree.selection)
         }
-        if labelFour.text == labelFive.text && labelFive.text == labelSix.text && labelSix.canTap == false
+        if imageViewFour.selection == imageViewFive.selection && imageViewFive.selection == imageViewSix.selection && imageViewSix.canTap == false && imageViewSix.selection != 0
         {
-            winningAlertShow(labelSix.text)
+            winningAlertShow(imageViewSix.selection)
         }
-        if labelSeven.text == labelEight.text && labelEight.text == labelNine.text && labelNine.canTap == false
+        if imageViewSeven.selection == imageViewEight.selection && imageViewEight.selection == imageViewNine.selection && imageViewNine.canTap == false && imageViewNine.selection != 0
         {
-            winningAlertShow(labelNine.text)
+            winningAlertShow(imageViewNine.selection)
         }
-        if labelOne.text == labelFour.text && labelFour.text == labelSeven.text && labelSeven.canTap == false
+        if imageViewOne.selection == imageViewFour.selection && imageViewFour.selection == imageViewSeven.selection && imageViewSeven.canTap == false && imageViewSeven.selection != 0
         {
-            winningAlertShow(labelSeven.text)
+            winningAlertShow(imageViewSeven.selection)
         }
-        if labelTwo.text == labelFive.text && labelFive.text == labelEight.text && labelEight.canTap == false
+        if imageViewTwo.selection == imageViewFive.selection && imageViewFive.selection == imageViewEight.selection && imageViewEight.canTap == false && imageViewEight.selection != 0
         {
-            winningAlertShow(labelEight.text)
+            winningAlertShow(imageViewEight.selection)
         }
-        if labelThree.text == labelSix.text && labelSix.text == labelNine.text && labelNine.canTap == false
+        if imageViewThree.selection == imageViewSix.selection && imageViewSix.selection == imageViewNine.selection && imageViewNine.canTap == false && imageViewNine.selection != 0
         {
-            winningAlertShow(labelNine.text)
+            winningAlertShow(imageViewNine.selection)
         }
-        if labelOne.text == labelFive.text && labelFive.text == labelNine.text && labelNine.canTap == false
+        if imageViewOne.selection == imageViewFive.selection && imageViewFive.selection == imageViewNine.selection && imageViewNine.canTap == false && imageViewNine.selection != 0
         {
-            winningAlertShow(labelNine.text)
+            winningAlertShow(imageViewNine.selection)
         }
-        if labelThree.text == labelFive.text && labelFive.text ==  labelSeven.text && labelSeven.canTap == false
+        if imageViewThree.selection == imageViewFive.selection && imageViewFive.selection ==  imageViewSeven.selection && imageViewSeven.canTap == false && imageViewSeven.selection != 0
         {
-            winningAlertShow(labelSeven.text)
+            winningAlertShow(imageViewSeven.selection)
         }
     }
 
     //Function to figure out what the text of our CustomLabel will be once we have found the one we are tapping or that moved our indicatorLabel over
-    func decideLabelText(label: CustomLabel)
+    func decideImage(imageView: CustomImageView)
     {
 
-        if label.canTap == true
+        if imageView.canTap == true
         {
-            label.canTap = false
+            imageView.canTap = false
 
             if turnDecider == true
             {
-                label.text = "X"
-                label.textColor = UIColor.blueColor()
+                imageView.image = UIImage(named: "image_1")
+                imageView.selection = 1
                 turnDecider = false
 
                 basicAI()
             }
             else
             {
-                label.text = "O"
-                label.textColor = UIColor.redColor()
+               imageView.image = UIImage(named: "image_2")
+                imageView.selection = 2
                 turnDecider = true
             }
 
 
-            switchIndicatorLabel()
+            switchIndicatorImage()
 
             turnCount++
             decideWinner()
@@ -161,19 +164,21 @@ class ViewController: UIViewController {
     }
 
     //Function to show our AlertController and then use the AlertAction to reset the game
-    func winningAlertShow(labelString: String)
+    func winningAlertShow(intSelection: Int)
     {
-        let alert = UIAlertController(title: "\(labelString) is the Winner", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "\(intSelection) is the Winner", message: nil, preferredStyle: .Alert)
 
         let restartAction = UIAlertAction(title: "Restart", style: .Default, handler: ({ action in
 
-            for label in self.labelArray
+            for imageView in self.imageViewArray
             {
-                label.text = ""
-                label.canTap = true
+                imageView.image = UIImage(named: "default_image")
+                imageView.selection = 0
+                imageView.canTap = true
                 self.turnDecider = true
                 self.turnCount = 0
-                self.switchIndicatorLabel()
+                self.switchIndicatorImage()
+
             }
             }))
         alert.addAction(restartAction)
@@ -187,36 +192,30 @@ class ViewController: UIViewController {
     {
         if turnCount == 9
         {
-            winningAlertShow("No one")
-            switchIndicatorLabel()
+            winningAlertShow(0)
+            switchIndicatorImage()
         }
     }
 
     func basicAI()
     {
-        for anyLabel in labelArray
+        for imageView in imageViewArray
         {
-            println("once through the loop")
-            if anyLabel.canTap == true
+            if imageView.canTap == true
             {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ({
                     NSThread.sleepForTimeInterval(0.5)
                     dispatch_async(dispatch_get_main_queue(), ({
-                        anyLabel.text = "O"
-                        anyLabel.textColor = UIColor.redColor()
+                        imageView.image = UIImage(named: "image_2")
                         }))
                     }))
-//                    anyLabel.text = "O"
-//                    anyLabel.textColor = UIColor.redColor()
-
-
-
-                anyLabel.canTap = false
+                imageView.canTap = false
                 turnDecider = true
                 turnCount++
                 break
             }
         }
+
     }
 
 

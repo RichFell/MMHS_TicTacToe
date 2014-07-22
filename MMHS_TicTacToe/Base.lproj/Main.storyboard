@@ -19,78 +19,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-en-1vB">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-6I-wa8" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="85" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HH-rw-2gY" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="170" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIg-4v-XQe" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="85" y="0.0" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lek-fx-5g1" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="0.0" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doD-6z-val" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="85" y="170" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-AZ-Dzj" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="85" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8O-XQ-qpm" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="170" y="170" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-oX-hRI" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-Bv-M0a" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-AZ-7Ef" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="z12-EM-hPc" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="85" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-wq-VoL" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="Zmy-bg-xb8" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="170" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="LsM-8l-hBE" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="85" y="85" width="80" height="80"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-ZK-uSr" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="170" y="0.0" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="6n1-da-xex" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="0.0" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="pLH-Et-Spz" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="170" y="85" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="9nM-sc-eRs" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="170" y="170" width="80" height="80"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -102,24 +57,20 @@
                                     <outletCollection property="gestureRecognizers" destination="KOI-xt-tWK" appends="YES" id="Ffy-yi-HoG"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4S-xE-uKf">
-                                <rect key="frame" x="260" y="40" width="80" height="80"/>
-                                <gestureRecognizers/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="J0P-co-pCR" customClass="CustomImageView" customModule="MMHS_TicTacToe" customModuleProvider="target">
+                                <rect key="frame" x="260" y="37" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="JOb-R9-cjf"/>
-                                    <constraint firstAttribute="width" constant="80" id="Rub-8V-LX1"/>
+                                    <constraint firstAttribute="width" constant="80" id="DhE-Ns-0B7"/>
+                                    <constraint firstAttribute="height" constant="80" id="eRU-vh-N3s"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="b4S-xE-uKf" secondAttribute="centerX" id="8CE-s1-TIB"/>
-                            <constraint firstItem="b4S-xE-uKf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="Gpu-4f-YmH"/>
+                            <constraint firstItem="J0P-co-pCR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="37" id="4yo-hB-2o8"/>
                             <constraint firstAttribute="centerX" secondItem="Yol-en-1vB" secondAttribute="centerX" id="fPs-dx-dhd"/>
+                            <constraint firstAttribute="centerX" secondItem="J0P-co-pCR" secondAttribute="centerX" id="jsC-fk-oww"/>
                             <constraint firstItem="Yol-en-1vB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="175" id="yZM-N8-w9E"/>
                         </constraints>
                         <connections>
@@ -127,17 +78,17 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="indicatorLabel" destination="b4S-xE-uKf" id="cpz-sA-T8V"/>
+                        <outlet property="imageViewEight" destination="Zmy-bg-xb8" id="IRY-Fv-iP4"/>
+                        <outlet property="imageViewFive" destination="LsM-8l-hBE" id="OYN-CG-JHr"/>
+                        <outlet property="imageViewFour" destination="z12-EM-hPc" id="Etk-1j-a2S"/>
+                        <outlet property="imageViewNine" destination="9nM-sc-eRs" id="Hq9-C4-vk5"/>
+                        <outlet property="imageViewOne" destination="lh3-Bv-M0a" id="JYl-Ti-uF2"/>
+                        <outlet property="imageViewSeven" destination="FCW-wq-VoL" id="V6J-YL-h7R"/>
+                        <outlet property="imageViewSix" destination="pLH-Et-Spz" id="WCo-P2-vHj"/>
+                        <outlet property="imageViewThree" destination="9Pg-ZK-uSr" id="pcn-gl-hbJ"/>
+                        <outlet property="imageViewTwo" destination="6n1-da-xex" id="tCL-iJ-Y5t"/>
+                        <outlet property="indicatorImageView" destination="J0P-co-pCR" id="c2G-IO-CmL"/>
                         <outlet property="labelBackgroundView" destination="Yol-en-1vB" id="7OX-IJ-2fe"/>
-                        <outlet property="labelEight" destination="doD-6z-val" id="Z9x-nM-svb"/>
-                        <outlet property="labelFive" destination="6U5-AZ-7Ef" id="npn-HJ-VYh"/>
-                        <outlet property="labelFour" destination="bQC-6I-wa8" id="8Fw-AP-ZrL"/>
-                        <outlet property="labelNine" destination="x8O-XQ-qpm" id="Q7O-dF-oG8"/>
-                        <outlet property="labelOne" destination="gMh-oX-hRI" id="nLe-0o-XEG"/>
-                        <outlet property="labelSeven" destination="8HH-rw-2gY" id="W0K-ju-rtn"/>
-                        <outlet property="labelSix" destination="AgN-AZ-Dzj" id="stF-Xb-ExP"/>
-                        <outlet property="labelThree" destination="lek-fx-5g1" id="OcR-LB-dO4"/>
-                        <outlet property="labelTwo" destination="IIg-4v-XQe" id="vkW-aH-A5j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,4 +106,7 @@
             <point key="canvasLocation" x="-69" y="58.000000000000007"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default_image" width="300" height="300"/>
+    </resources>
 </document>
