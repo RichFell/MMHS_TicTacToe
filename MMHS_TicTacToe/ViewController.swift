@@ -10,19 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
                             
-    @IBOutlet var indicatorLabel: UILabel
-    @IBOutlet var labelOne: CustomLabel
-    @IBOutlet var labelTwo: CustomLabel
-    @IBOutlet var labelThree: CustomLabel
-    @IBOutlet var labelFour: CustomLabel
-    @IBOutlet var labelFive: CustomLabel
-    @IBOutlet var labelSix: CustomLabel
-    @IBOutlet var labelSeven: CustomLabel
-    @IBOutlet var labelEight: CustomLabel
-    @IBOutlet var labelNine: CustomLabel
+    @IBOutlet var indicatorLabel: UILabel!
+    @IBOutlet var labelOne: CustomLabel!
+    @IBOutlet var labelTwo: CustomLabel!
+    @IBOutlet var labelThree: CustomLabel!
+    @IBOutlet var labelFour: CustomLabel!
+    @IBOutlet var labelFive: CustomLabel!
+    @IBOutlet var labelSix: CustomLabel!
+    @IBOutlet var labelSeven: CustomLabel!
+    @IBOutlet var labelEight: CustomLabel!
+    @IBOutlet var labelNine: CustomLabel!
 
-    @IBOutlet var labelBackgroundView: UIView
-    @IBOutlet var bigBackgroundView: UIView
+    @IBOutlet var labelBackgroundView: UIView!
+    @IBOutlet var bigBackgroundView: UIView!
     var labelArray = [CustomLabel]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
@@ -158,9 +158,8 @@ class ViewController: UIViewController {
             switchIndicatorLabel()
 
             turnCount++
-            noWinner()
-
             decideWinner()
+            noWinner()
         }
     }
 
@@ -203,9 +202,18 @@ class ViewController: UIViewController {
             println("once through the loop")
             if anyLabel.canTap == true
             {
-                println(anyLabel)
-                anyLabel.text = "O"
-                anyLabel.textColor = UIColor.redColor()
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ({
+                    NSThread.sleepForTimeInterval(0.5)
+                    dispatch_async(dispatch_get_main_queue(), ({
+                        anyLabel.text = "O"
+                        anyLabel.textColor = UIColor.redColor()
+                        }))
+                    }))
+//                    anyLabel.text = "O"
+//                    anyLabel.textColor = UIColor.redColor()
+
+
+
                 anyLabel.canTap = false
                 turnDecider = true
                 turnCount++
