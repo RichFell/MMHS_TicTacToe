@@ -122,6 +122,9 @@
                             <constraint firstAttribute="centerX" secondItem="Yol-en-1vB" secondAttribute="centerX" id="fPs-dx-dhd"/>
                             <constraint firstItem="Yol-en-1vB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="175" id="yZM-N8-w9E"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0k7-l0-n0a" appends="YES" id="Bkg-na-pgp"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="indicatorLabel" destination="b4S-xE-uKf" id="cpz-sA-T8V"/>
@@ -143,9 +146,9 @@
                         <action selector="onLabelTapped:" destination="BYZ-38-t0r" id="3RY-uY-b6k"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="G9N-5n-0qB">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="0k7-l0-n0a">
                     <connections>
-                        <action selector="onLabelDrag:" destination="BYZ-38-t0r" id="5lt-pn-bGH"/>
+                        <action selector="onLabelDrag:" destination="BYZ-38-t0r" id="vtc-2D-GKp"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
