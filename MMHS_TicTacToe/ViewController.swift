@@ -10,19 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
                             
-    @IBOutlet var indicatorLabel: UILabel
-    @IBOutlet var labelOne: CustomLabel
-    @IBOutlet var labelTwo: CustomLabel
-    @IBOutlet var labelThree: CustomLabel
-    @IBOutlet var labelFour: CustomLabel
-    @IBOutlet var labelFive: CustomLabel
-    @IBOutlet var labelSix: CustomLabel
-    @IBOutlet var labelSeven: CustomLabel
-    @IBOutlet var labelEight: CustomLabel
-    @IBOutlet var labelNine: CustomLabel
+    @IBOutlet var indicatorLabel: UILabel!
+    @IBOutlet var labelOne: CustomLabel!
+    @IBOutlet var labelTwo: CustomLabel!
+    @IBOutlet var labelThree: CustomLabel!
+    @IBOutlet var labelFour: CustomLabel!
+    @IBOutlet var labelFive: CustomLabel!
+    @IBOutlet var labelSix: CustomLabel!
+    @IBOutlet var labelSeven: CustomLabel!
+    @IBOutlet var labelEight: CustomLabel!
+    @IBOutlet var labelNine: CustomLabel!
 
-    @IBOutlet var labelBackgroundView: UIView
-    @IBOutlet var bigBackgroundView: UIView
+    @IBOutlet var labelBackgroundView: UIView!
+    @IBOutlet var bigBackgroundView: UIView!
     var labelArray = [CustomLabel]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
