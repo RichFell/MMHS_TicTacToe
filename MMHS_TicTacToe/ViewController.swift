@@ -26,21 +26,21 @@ class ViewController: UIViewController {
     var labelArray = [CustomLabel]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
+    var indicatorLabelCenter = CGPoint()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         labelArray = [labelOne, labelTwo, labelThree, labelFour, labelFive, labelSix, labelSeven, labelEight, labelNine]
         switchIndicatorLabel()
+        indicatorLabelCenter = indicatorLabel.center
     }
 
     //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        var point = CGPoint()
-        point = tapGestureRecognizer.locationInView(labelBackgroundView)
-
-        var label = findLabel(point)
+        var label = findLabel(tapGestureRecognizer.locationInView(labelBackgroundView))
 
         decideLabelText(label)
     }
@@ -136,9 +136,8 @@ class ViewController: UIViewController {
             switchIndicatorLabel()
 
             turnCount++
-            noWinner()
-
             decideWinner()
+            noWinner()
         }
     }
 
@@ -181,9 +180,18 @@ class ViewController: UIViewController {
             println("once through the loop")
             if anyLabel.canTap == true
             {
-                println(anyLabel)
-                anyLabel.text = "O"
-                anyLabel.textColor = UIColor.redColor()
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ({
+                    NSThread.sleepForTimeInterval(0.5)
+                    dispatch_async(dispatch_get_main_queue(), ({
+                        anyLabel.text = "O"
+                        anyLabel.textColor = UIColor.redColor()
+                        }))
+                    }))
+//                    anyLabel.text = "O"
+//                    anyLabel.textColor = UIColor.redColor()
+
+
+
                 anyLabel.canTap = false
                 turnDecider = true
                 turnCount++
