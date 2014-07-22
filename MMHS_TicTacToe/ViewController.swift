@@ -20,9 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet var labelSeven: CustomLabel!
     @IBOutlet var labelEight: CustomLabel!
     @IBOutlet var labelNine: CustomLabel!
-
     @IBOutlet var labelBackgroundView: UIView!
-    @IBOutlet var bigBackgroundView: UIView!
+
     var labelArray = [CustomLabel]()
     var turnDecider = true//true will mean it is X's turn false = O's turn
     var turnCount = 0
@@ -43,6 +42,26 @@ class ViewController: UIViewController {
         var label = findLabel(tapGestureRecognizer.locationInView(labelBackgroundView))
 
         decideLabelText(label)
+    }
+    //Function utilizing the UIPanGestureRecognizer. Shows where the point is in the code and moves the label accordingly, also changes the labels in the grid if the indicatorLabel is moved within their frame
+    @IBAction func onLabelDrag(panGestureRecognizer: UIPanGestureRecognizer)
+    {
+        var point = panGestureRecognizer.locationInView(view)
+        indicatorLabel.center = CGPointMake(point.x, point.y)
+
+        if panGestureRecognizer.state == UIGestureRecognizerState.Ended
+        {
+            var label = findLabel(panGestureRecognizer.locationInView(labelBackgroundView))
+            indicatorLabel.center = indicatorLabelCenter
+
+            if label != nil
+            {
+                if CGRectContainsPoint(label.frame, panGestureRecognizer.locationInView(labelBackgroundView))
+                {
+                    decideLabelText(label)
+                }
+            }
+        }
     }
 
     //Function to find the Label in the grid that is either being tapped or the PanGesture recognizer is over
@@ -177,7 +196,6 @@ class ViewController: UIViewController {
     {
         for anyLabel in labelArray
         {
-            println("once through the loop")
             if anyLabel.canTap == true
             {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ({

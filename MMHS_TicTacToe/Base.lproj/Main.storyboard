@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-en-1vB">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-en-1vB">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-6I-wa8" customClass="CustomLabel" customModule="MMHS_TicTacToe" customModuleProvider="target">
@@ -116,12 +116,12 @@
                             <constraint firstItem="Yol-en-1vB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="175" id="yZM-N8-w9E"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="0k7-l0-n0a" appends="YES" id="Bkg-na-pgp"/>
+                            <outletCollection property="gestureRecognizers" destination="vWZ-X6-TG3" appends="YES" id="bxr-GL-F82"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="indicatorLabel" destination="b4S-xE-uKf" id="cpz-sA-T8V"/>
-                        <outlet property="labelBackgroundView" destination="Yol-en-1vB" id="7OX-IJ-2fe"/>
+                        <outlet property="labelBackgroundView" destination="Yol-en-1vB" id="jV3-mm-PRS"/>
                         <outlet property="labelEight" destination="doD-6z-val" id="Z9x-nM-svb"/>
                         <outlet property="labelFive" destination="6U5-AZ-7Ef" id="npn-HJ-VYh"/>
                         <outlet property="labelFour" destination="bQC-6I-wa8" id="8Fw-AP-ZrL"/>
@@ -139,6 +139,11 @@
                         <action selector="onLabelTapped:" destination="BYZ-38-t0r" id="3RY-uY-b6k"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vWZ-X6-TG3">
+                    <connections>
+                        <action selector="onLabelDrag:" destination="BYZ-38-t0r" id="Azp-hf-Pqj"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-69" y="58.000000000000007"/>
         </scene>
