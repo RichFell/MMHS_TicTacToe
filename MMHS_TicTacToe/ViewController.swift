@@ -37,10 +37,7 @@ class ViewController: UIViewController {
     //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap
     @IBAction func onLabelTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        var point = CGPoint()
-        point = tapGestureRecognizer.locationInView(labelBackgroundView)
-
-        var label = findLabel(point)
+        var label = findLabel(tapGestureRecognizer.locationInView(labelBackgroundView))
 
         decideLabelText(label)
     }
