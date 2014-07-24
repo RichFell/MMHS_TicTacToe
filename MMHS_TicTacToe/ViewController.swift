@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
                             
     @IBOutlet var indicatorLabel: UILabel!
     @IBOutlet var labelOne: CustomLabel!
@@ -23,11 +24,12 @@ class ViewController: UIViewController {
 
     @IBOutlet var labelBackgroundView: UIView!
     @IBOutlet var bigBackgroundView: UIView!
-    var labelArray = [CustomLabel]()
+    var labelArray : [CustomLabel] = []
     var turnDecider = true
     var turnCount = 0
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         labelArray = [labelOne, labelTwo, labelThree, labelFour, labelFive, labelSix, labelSeven, labelEight, labelNine]
