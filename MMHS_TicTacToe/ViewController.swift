@@ -196,15 +196,15 @@ class ViewController: UIViewController
         {
             if imageView.canTap == true
             {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ({
-                    NSThread.sleepForTimeInterval(0.5)
-                    dispatch_async(dispatch_get_main_queue(), ({
-                        imageView.image = UIImage(named: "image_2")
-                        imageView.canTap = false
-                        self.turnDecider = true
-                        self.turnCount++
-                        }))
-                    }))
+                imageView.image = UIImage(named: "image_2")
+                imageView.canTap = false
+                self.turnDecider = true
+                self.turnCount++
+                imageView.alpha = 0.0;
+                imageView.selection = 2
+                UIView.animateWithDuration(1.0, animations: {
+                    imageView.alpha = 1.0;
+                    })
                 break
             }
         }
