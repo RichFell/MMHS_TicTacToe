@@ -37,7 +37,6 @@ class ViewController: UIViewController
 
         imageViewArray = [imageViewOne, imageViewTwo, imageViewThree, imageViewFour, imageViewFive, imageViewSix, imageViewSeven, imageViewEight, imageViewNine]
         indicatorImageViewCenter = indicatorImageView.center
-
     }
 
     //Function utilizing the UITapGestureRecognizer when a tap is recognized, to find the point of the tap

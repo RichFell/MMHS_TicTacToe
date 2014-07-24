@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_image" translatesAutoresizingMaskIntoConstraints="NO" id="5LO-tA-MFv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-en-1vB">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <subviews>
@@ -103,10 +106,11 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-69" y="58.000000000000007"/>
+            <point key="canvasLocation" x="-69" y="58"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background_image" width="320" height="568"/>
         <image name="default_image" width="300" height="300"/>
     </resources>
 </document>
