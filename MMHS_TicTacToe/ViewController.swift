@@ -135,7 +135,6 @@ class ViewController: UIViewController
     //Function to figure out what the text of our CustomLabel will be once we have found the one we are tapping or that moved our indicatorLabel over
     func decideImage(imageView: CustomImageView)
     {
-
         if imageView.canTap == true
         {
             imageView.canTap = false
@@ -147,20 +146,13 @@ class ViewController: UIViewController
                 turnDecider = false
 
                 basicAI()
+
+                switchIndicatorImage()
+
+                turnCount++
+                decideWinner()
+                noWinner()
             }
-            else
-            {
-               imageView.image = UIImage(named: "image_2")
-                imageView.selection = 2
-                turnDecider = true
-            }
-
-
-            switchIndicatorImage()
-
-            turnCount++
-            decideWinner()
-            noWinner()
         }
     }
 
@@ -208,11 +200,11 @@ class ViewController: UIViewController
                     NSThread.sleepForTimeInterval(0.5)
                     dispatch_async(dispatch_get_main_queue(), ({
                         imageView.image = UIImage(named: "image_2")
+                        imageView.canTap = false
+                        self.turnDecider = true
+                        self.turnCount++
                         }))
                     }))
-                imageView.canTap = false
-                turnDecider = true
-                turnCount++
                 break
             }
         }
